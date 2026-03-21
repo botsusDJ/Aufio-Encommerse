@@ -1,5 +1,5 @@
 import { CategoryCard } from '../../components/CategoryCard/CategoryCard';
-import { Footer } from '../../components/Footer/Footer';
+import { Ad } from '../../components/ProductItem/Ad';
 
 export const Home = () => (
   <div>
@@ -22,6 +22,8 @@ export const Home = () => (
       <CategoryCard title="Earphones" link="/earphones" />
     </div>
 
-    <Footer/>
+    <div className="container products-container">
+      <Ad/>
+    </div>
   </div>
 );

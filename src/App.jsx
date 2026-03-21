@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Layout/Navbar';
 import { Home } from './pages/Home/Home';
 import { CategoryPage } from './pages/Category/CategoryPage';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   const data = {
@@ -13,13 +14,14 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/headphones" element={<CategoryPage title="Headphones" products={data.headphones} />} />
         <Route path="/speakers" element={<CategoryPage title="Speakers" products={data.speakers} />} />
         <Route path="/earphones" element={<CategoryPage title="Earphones" products={data.earphones} />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }
