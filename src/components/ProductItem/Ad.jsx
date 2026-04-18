@@ -2,8 +2,7 @@ export const Ad = () => {
   return (
     <div className={`product-item-row reverse`}>
       <div className="product-image-container">
-        {/* <img src="./assets....." alt="man_image" /> */}
-        <div style={{color: '#999'}}>Man Image</div>
+        <img src="src\assets\product-xx99-mark-two-headphones\desktop\image-gallery-1.jpg" width="470px" height="560px" alt="man_image" />
       </div>
       
       <div className="product-content">

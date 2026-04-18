@@ -17,9 +17,9 @@ export const Home = () => (
     </div>
     
     <div className="container cat-grid">
-      <CategoryCard title="Headphones" link="/headphones" />
-      <CategoryCard title="Speakers" link="/speakers" />
-      <CategoryCard title="Earphones" link="/earphones" />
+        <CategoryCard image="src\\assets\\shared\desktop\\image-category-thumbnail-headphones.png" title="Headphones" link="/headphones" />
+        <CategoryCard image="src\\assets\\shared\\desktop\\image-category-thumbnail-speakers.png" title="Speakers" link="/speakers" />
+        <CategoryCard image="src\\assets\\shared\\desktop\\image-category-thumbnail-earphones.png" title="Earphones" link="/earphones" />
     </div>
 
     <div className="container products-container">

@@ -19,7 +19,9 @@ export const Footer = () => (
           <div>CopyRight 2021. All rights reserved</div>
         </div>
         <div>
-          {/* <img src="" alt=""/> */}
+          <img src="src\assets\shared\desktop\icon-facebook.svg" alt="" width="20px" height="20px"/>
+          <img src="src\assets\shared\desktop\icon-instagram.svg" alt="" width="20px" height="20px"/>
+          <img src="src\assets\shared\desktop\icon-twitter.svg" alt="" width="20px" height="20px"/>
         </div>
       </div>
     </div>
