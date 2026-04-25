@@ -45,7 +45,7 @@ function App() {
     headphones: [
       { id: 1, name: 'XX99 Mark II', price: 2999, isNew: true, desc: 'The pinnacle of pristine audio.', image: "src\\assets\\product-xx99-mark-two-headphones\\desktop\\image-category-page-preview.jpg" },
       { id: 2, name: 'XX99 Mark I', price: 1750, isNew: false, desc: 'The gold standard for audiophiles.', image: "src\\assets\\product-xx99-mark-one-headphones\\desktop\\image-category-page-preview.jpg"},
-      { id: 3, name: 'XX59 Headphones', price: 1000, isNew: false, desc: 'The Headphones', image: "src\\assets\\product-xx59-headphones\\desktop\\image-category-page-preview.jpg"}
+      { id: 3, name: 'XX59 Headphones', price: 899, isNew: false, desc: 'The Headphones', image: "src\\assets\\product-xx59-headphones\\desktop\\image-category-page-preview.jpg"}
     ],
     speakers: [
       { id: 4, name: 'ZX7 Speaker', price: 3500, isNew: false, desc: 'Nice speaker.', image: "src/assets/product-zx7-speaker/desktop/image-category-page-preview.jpg" },

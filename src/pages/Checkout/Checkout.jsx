@@ -1,7 +1,20 @@
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { CheckoutModal } from '../../components/CheckoutModal/CheckoutModal';
 
-export const Checkout = () => {
+export const Checkout = ({ cartItems }) => {
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+  const shipping = 50;
+  const vat = Math.floor(totalPrice * 0.2);
+  const grandTotal = totalPrice + shipping;
+
+  const handlePay = (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
 
   return (
     <div className="checkout-bg">
@@ -66,41 +79,55 @@ export const Checkout = () => {
 
           <div className="checkout-summary-container">
             <h6 style={{textTransform: 'uppercase', marginBottom: '32px'}}>Summary</h6>
-            
-            <div className="cart-item">
-              <div className="cart-item-img">{/* Placeholder */}</div>
+
+        <div className="cart-items-list">
+          {cartItems.length === 0 && <div style={{textAlign: 'center', padding: '20px'}}>Your cart is empty</div>}
+          
+          {cartItems.map(item => (
+            <div className="cart-item" key={item.id}>
+              <img className="cart-item-img" src={item.image}/>
               <div className="cart-item-info">
-                <div className="cart-item-name">XX99 MK II</div>
-                <div className="cart-item-price">$ 2,999</div>
+                <div className="cart-item-name">{item.name}</div>
+                <div className="cart-item-price">$ {item.price.toLocaleString()}</div>
               </div>
-              <div style={{color: 'grey', fontWeight: 'bold'}}>x1</div>
+              <div className="quantity-control">
+                <div>x{item.quantity}</div>
+              </div>
             </div>
+          ))}
+        </div>
 
             <div style={{marginTop: '32px'}}>
               <div className="summary-row">
                 <span style={{color: 'grey'}}>Total</span>
-                <span style={{fontWeight: 'bold'}}>$5,396</span>
+                <span style={{fontWeight: 'bold'}}>${totalPrice}</span>
               </div>
               <div className="summary-row">
                 <span style={{color: 'grey'}}>Shipping</span>
-                <span style={{fontWeight: 'bold'}}>$50</span>
+                <span style={{fontWeight: 'bold'}}>${shipping}</span>
               </div>
               <div className="summary-row">
                 <span style={{color: 'grey'}}>VAT</span>
-                <span style={{fontWeight: 'bold'}}>$1,079</span>
+                <span style={{fontWeight: 'bold'}}>${vat}</span>
               </div>
               <div className="summary-row summary-total">
                 <span style={{color: 'grey'}}>Grand Total</span>
-                <span style={{fontWeight: 'bold', color: 'var(--orange)'}}>$ 5,446</span>
+                <span style={{fontWeight: 'bold', color: 'var(--orange)'}}>${grandTotal}</span>
               </div>
             </div>
 
-            <button className="btn-orange" style={{width: '100%', marginTop: '32px'}}>
+            <button className="btn-orange" style={{width: '100%', marginTop: '32px'}} onClick={handlePay}>
               Continue & Pay
             </button>
           </div>
         </div>
       </div>
+
+      <CheckoutModal 
+        isOpen={isModalOpen} 
+        cartItems={cartItems} 
+        grandTotal={grandTotal} 
+      />
     </div>
   );
 };

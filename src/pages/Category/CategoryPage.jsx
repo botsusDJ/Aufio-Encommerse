@@ -5,13 +5,13 @@ import { Ad } from '../../components/ProductItem/Ad';
 export const CategoryPage = ({ title, products, onAdd }) => {
   return (
     <div>
-      <div className="page-title-box">
+      {/* <div className="page-title-box">
         <div className="container">
           <div style={{ fontSize: '40px', fontWeight: 'bold', letterSpacing: '1.5px' }}>
             {title}
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="container products-container">
         {products.map((item, index) => (

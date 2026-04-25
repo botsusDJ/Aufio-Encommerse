@@ -19,7 +19,7 @@ export const Cart = ({ isOpen, onClose, cartItems, updateQuantity, removeAll }) 
           
           {cartItems.map(item => (
             <div className="cart-item" key={item.id}>
-              <div className="cart-item-img"></div>
+              <img className="cart-item-img" src={item.image}/>
               <div className="cart-item-info">
                 <div className="cart-item-name">{item.name}</div>
                 <div className="cart-item-price">$ {item.price.toLocaleString()}</div>
